@@ -96,7 +96,7 @@ fn hexVal(c: u8) u4 {
 
 // TODO: is this in the standard lib somewhere?
 fn decodeHexByte(hex: [2]u8) u8 {
-    return @as(u8, @intCast(hexVal(hex[0]))) << 4 | hexVal(hex[1]);
+    return (@as(u8, @intCast(hexVal(hex[0]))) << 4) | hexVal(hex[1]);
 }
 
 pub const PropertyKey = extern struct {
